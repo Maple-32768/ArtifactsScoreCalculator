@@ -1,0 +1,11 @@
+input{
+    text-align: right;
+}
+
+input.class1{
+    width: 150px;
+}
+
+input.class2{
+    width: 102px;
+}
