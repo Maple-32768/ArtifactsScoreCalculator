@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script lang="javascript" type="text/javascript">
+        function Calculate(){
+            var score = 0, strength, rate, damage;
+            strength = parseFloat(document.getElementById("str").value);
+            rate = parseFloat(document.getElementById("crt_rate").value);
+            damage = parseFloat(document.getElementById("crt_dmg").value);
+
+            score += isNaN(strength) ? 0 : strength;
+            score += isNaN(rate) ? 0 : rate * 2;
+            score += isNaN(damage) ? 0 : damage;
+            document.getElementById("score").innerText = Math.round(score * 10) / 10.0;
+        }
+
+        function Clear(){
+            document.getElementById("str").value = "";
+            document.getElementById("crt_rate").value = "";
+            document.getElementById("crt_dmg").value = "";
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <label for="str">攻撃力</label>
+        <input type="number" name="strength" id="str" min="0" required>
+        %
+        <br>
+        <label for="crt_rate">会心率</label>
+        <input type="number" name="critical_rate" id="crt_rate" min="0" required>
+        %
+        <br>
+        <label for="crt_dmg">会心ダメージ</label>
+        <input type="number" name="critical_damage" id="crt_dmg" min="0" required>
+        %
+    </p>
+    <button onclick="Calculate();">計算</button>
+    <button onclick="Clear();">リセット</button>
+    <p>
+        スコア : 
+        <label id="score">0</label>
+    </p>
+</body>
+</html>
