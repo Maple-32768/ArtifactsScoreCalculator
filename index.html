@@ -37,27 +37,26 @@
     <title>聖遺物スコア計算器</title>
 </head>
 <body>
-    <h2>聖遺物スコア計算器</h2>
-    <p>
-        <label for="str">攻撃力</label>
-        <input type="number" name="strength" id="str" min="0" class="class1">
-        %
-        <br>
-        <label for="crt_rate">会心率</label>
-        <input type="number" name="critical_rate" id="crt_rate" min="0" class="class1">
-        %
-        <br>
-        <label for="crt_dmg">会心ダメージ</label>
-        <input type="number" name="critical_damage" id="crt_dmg" min="0" class="class2">
-        %
-    </p>
-    <button onclick="Calculate();">計算</button>
-    <button onclick="Clear();">リセット</button>
-    <p>
-        <h3>
-            スコア :
-            <label id="score">0</label>
-        </h3>
-    </p>
+	<div class="contents_wrapper">
+	    <h2>聖遺物スコア計算器</h2>
+	    <p>
+	        <label for="str">攻撃力</label>
+	        <input type="number" name="strength" id="str" min="0" class="class1">%
+	        <br>
+	        <label for="crt_rate">会心率</label>
+	        <input type="number" name="critical_rate" id="crt_rate" min="0" class="class1">%
+	        <br>
+	        <label for="crt_dmg">会心ダメージ</label>
+	        <input type="number" name="critical_damage" id="crt_dmg" min="0" class="class2">%
+	    </p>
+	    <button onclick="Calculate();">計算</button>
+	    <button onclick="Clear();">リセット</button>
+	    <p>
+	        <h3>
+	            スコア :
+	            <label id="score">0</label>
+	        </h3>
+	    </p>
+	</div>
 </body>
 </html>
