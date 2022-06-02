@@ -33,6 +33,30 @@
             document.getElementById("crt_dmg").value = "";
             Calculate();
         }
+
+        function getUrlQueries() {
+            var queryStr = window.location.search.slice(1);
+                queries = {};
+
+            if (!queryStr) {
+                return queries;
+            }
+
+            queryStr.split('&').forEach(function(queryStr) {
+                var queryArr = queryStr.split('=');
+                queries[queryArr[0]] = queryArr[1];
+            });
+
+            return queries;
+        }
+
+        window.onload = function(){
+            var args = getUrlQueries();
+            if(args["str"] != null) document.getElementById("str").value = args["str"];
+            if(args["rate"] != null) document.getElementById("crt_rate").value = args["rate"];
+            if(args["dmg"] != null) document.getElementById("crt_dmg").value = args["dmg"];
+            
+        };
     </script>
     <title>聖遺物スコア計算器</title>
 </head>
